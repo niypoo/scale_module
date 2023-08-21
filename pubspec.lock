@@ -22,7 +22,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "110b767323ce788da2fe728d051d9689050287a0"
+      resolved-ref: aef4dbcf3efc234d29b09c773fa122f7dde5416b
       url: "https://github.com/niypoo/app_configuration_service.git"
     source: git
     version: "1.0.0+1"
@@ -63,7 +63,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "566be11e86fc660ee314ab7321e7c44cd234f38a"
+      resolved-ref: "078d447fc3c751389c26b22ec7a3ee45049baa81"
       url: "https://github.com/niypoo/bottom_sheet_helper.git"
     source: git
     version: "1.0.0+1"
@@ -104,7 +104,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "7abdfe9fa3046fa0cd45b32ed719a554b005dad8"
+      resolved-ref: "962e23e2dbf8c40c95994a5f45e356fcca4eabe4"
       url: "https://github.com/niypoo/charts_module.git"
     source: git
     version: "1.0.0+1"
@@ -169,7 +169,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "6f13f3bc41274f66ae09eb12ce3c4b174ca21b03"
+      resolved-ref: e368de8569d19c3edcd0f2e2edf413a92ed33aa9
       url: "https://github.com/niypoo/date_helper.git"
     source: git
     version: "1.0.0+1"
@@ -178,7 +178,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "1021c0adad42a0862f61859abe2b05beab2052f9"
+      resolved-ref: b6c517068ad294eb4a9312856b7595f3fba3f7de
       url: "https://github.com/niypoo/date_picker_module.git"
     source: git
     version: "1.0.0+1"
@@ -212,7 +212,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "41674160c0757027d59fbb8952362c10bc5c51e0"
+      resolved-ref: "8480320aacbcfd14fba728cd857fefe8b03e212d"
       url: "git@github.com:niypoo/diabetes_helpers.git"
     source: git
     version: "1.0.0+1"
@@ -221,8 +221,17 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "4e1d7ee998f6a0e4499b1634e828037ea9cf88cb"
+      resolved-ref: "6ba6612fc8f4e9e2b192643248fdd23f74390d54"
       url: "git@github.com:niypoo/diabetes_models.git"
+    source: git
+    version: "1.0.0+1"
+  diabetes_widgets:
+    dependency: transitive
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "814835d0f62f187ddf976b579d7c8aee3f3e1ad1"
+      url: "git@github.com:niypoo/diabetes_widgets.git"
     source: git
     version: "1.0.0+1"
   dynamic_links_helper:
@@ -230,7 +239,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: cece35e9b19d0e334217cb9dead0edab223f8ea9
+      resolved-ref: "318e41d9feae669e534e235902774751f5964c5a"
       url: "https://github.com/niypoo/dynamic_links_helper.git"
     source: git
     version: "1.0.0+1"
@@ -319,7 +328,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "1e9371550db53b4fc583cc32e63e97f5cb784c39"
+      resolved-ref: ad1b1207e05b3a60a47ec65412cb51c56e041603
       url: "https://github.com/niypoo/firebase_authentication_service.git"
     source: git
     version: "1.0.0+1"
@@ -328,7 +337,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: b90cb676cfbdc5d5c666c1d935aa12e0e13c940f
+      resolved-ref: "97e9be4ff24e67a992293e9ee94ed122d6513ccb"
       url: "https://github.com/niypoo/firebase_cloud_messaging_service.git"
     source: git
     version: "1.0.0+1"
@@ -337,7 +346,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: c93b0ba13310a6721ad1560db2f84b1b24d97148
+      resolved-ref: "0121008c88fabfa868e0d269c3d29a8e556ae1c4"
       url: "https://github.com/niypoo/firebase_cloud_storage_service.git"
     source: git
     version: "1.0.0+1"
@@ -458,7 +467,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: c0a50b84a0fda424ec1da44fe93d3650ada77fdd
+      resolved-ref: "3dfea6a9d819a6e467e285f41f818446b3d70fb7"
       url: "https://github.com/niypoo/firestore_service.git"
     source: git
     version: "1.0.0+1"
@@ -554,7 +563,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "8d444ee98d1b314a7d706751cf852c3eb17c0f5f"
+      resolved-ref: "9e81f96c02261e72bd03e4ea49afa26859cca847"
       url: "https://github.com/niypoo/fly_ui.git"
     source: git
     version: "1.0.0+1"
@@ -579,7 +588,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "6396cd25e671f23e633d43798b9557fc7b6e73ed"
+      resolved-ref: "6e51c490b250bb7523cf74cecbb194dace1164fe"
       url: "https://github.com/niypoo/helpers.git"
     source: git
     version: "1.0.0+1"
@@ -668,7 +677,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: b6687a59cb4d96dca479b5904a20d4a65f4e076f
+      resolved-ref: "4bc394ce7ee84d3e42d9320cdf4fa7afbd6fef2d"
       url: "https://github.com/niypoo/image_select_helper.git"
     source: git
     version: "1.0.0+1"
@@ -693,7 +702,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "8504b1729a2fa8106733d2709b8e71da14be9dee"
+      resolved-ref: fded03b4c78a6e92aa9da690a94b22201c758fc8
       url: "https://github.com/niypoo/launch_url_helper.git"
     source: git
     version: "1.0.0+1"
@@ -710,7 +719,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "0d254f0768a80898b63d2f594812ad85781ba47d"
+      resolved-ref: bfc8086cde5bb2e60eaf261497060dada8396f69
       url: "https://github.com/niypoo/loading_service.git"
     source: git
     version: "1.0.0+1"
@@ -719,7 +728,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: c3c1d8ad5d5d58304d749b7f3b9a9a3a0d1c6cbb
+      resolved-ref: "129bc43cc1c9c9ee643397405c2b1dfe5d227743"
       url: "https://github.com/niypoo/local_storage_service.git"
     source: git
     version: "1.0.0+1"
@@ -755,6 +764,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.4"
+  number_picker_module:
+    dependency: transitive
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "19fae3a9041a895135e6c357b1e3caa95006fa1c"
+      url: "https://github.com/niypoo/number_picker_module.git"
+    source: git
+    version: "1.0.0+1"
   octo_image:
     dependency: transitive
     description:
@@ -896,7 +914,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "3be3d76cdaed7ccef44a8ec43070e00ef35d1193"
+      resolved-ref: "25befadb8b7ee16e94f02ebd5dd1d2bbad6fa976"
       url: "https://github.com/niypoo/qr_code_scanner_module.git"
     source: git
     version: "1.0.0+1"
@@ -913,7 +931,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: fc0783320cc5b2305bd82d2c089c1003d83cf91a
+      resolved-ref: "865ec30e3b506f45c9b1939997792080fffc93f2"
       url: "https://github.com/niypoo/realtime_database_service.git"
     source: git
     version: "1.0.0+1"
@@ -930,7 +948,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "8deb9efe0a62efb582c913a43b3e89e20a6e0db8"
+      resolved-ref: "4c002e16cd32ea1f4223d54cc16da308181dbd42"
       url: "https://github.com/niypoo/share_helper.git"
     source: git
     version: "1.0.0+1"
@@ -969,7 +987,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "6be6f9da529368aa713d1c6cf550e73ef1f87329"
+      resolved-ref: "17c16de4060a5a5bf873097e99444e386c61142c"
       url: "https://github.com/niypoo/snackbar_helper.git"
     source: git
     version: "1.0.0+1"
