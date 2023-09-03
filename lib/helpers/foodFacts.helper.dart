@@ -28,41 +28,31 @@ class FoodsFactsHelper {
     // get carbs per ratio
     // 0.49 ratio * 38 carbs in 100 grams
     // will give us 18.62
-    return Food(
-      id: food.id,
-      name: food.name,
-      by: food.by,
-      rate: food.rate,
-      ingredients: food.ingredients,
-      instructions: food.instructions,
-      photoUrl: food.photoUrl,
-      tipsAndTricks: food.tipsAndTricks,
-      type: food.type,
-      uid: food.uid,
 
-      // reCalculating carbs with new ratio
-      carbs: (food.carbs.isNaN)
-          ? 0.0
-          : double.parse((food.carbs * ratio).toStringAsFixed(1)),
+    // reCalculating calories with new ratio
+    food.calories = (food.calories == null || food.calories!.isNaN)
+        ? 0.0
+        : double.parse((food.calories! * ratio).toStringAsFixed(1));
 
-      // reCalculating calories with new ratio
-      calories: (food.calories == null || food.calories!.isNaN)
-          ? 0.0
-          : double.parse((food.calories! * ratio).toStringAsFixed(1)),
+    // reCalculating carbs with new ratio
+    food.carbs = (food.carbs.isNaN)
+        ? 0.0
+        : double.parse((food.carbs * ratio).toStringAsFixed(1));
 
-      // reCalculating fat with new ratio
-      fat: (food.fat == null || food.fat!.isNaN)
-          ? 0.0
-          : double.parse((food.fat! * ratio).toStringAsFixed(1)),
+    // reCalculating fat with new ratio
+    food.fat = (food.fat == null || food.fat!.isNaN)
+        ? 0.0
+        : double.parse((food.fat! * ratio).toStringAsFixed(1));
 
-      // reCalculating protein with new ratio
-      protein: (food.protein == null || food.protein!.isNaN)
-          ? 0.0
-          : double.parse((food.protein! * ratio).toStringAsFixed(1)),
+    // reCalculating protein with new ratio
+    food.fat = (food.protein == null || food.protein!.isNaN)
+        ? 0.0
+        : double.parse((food.protein! * ratio).toStringAsFixed(1));
 
-      scale: WeightScale(unit: unit, weight: weight),
-      toGrams: weightPreGrams,
-    );
+    food.scale = WeightScale(unit: unit, weight: weight);
+    food.toGrams = weightPreGrams;
+
+    return food;
   }
 
   // get total of carbs in my meal
