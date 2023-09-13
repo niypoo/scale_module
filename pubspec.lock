@@ -220,7 +220,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: e6e6df28dcc34b11930367e614a0f31fc8513803
+      resolved-ref: "9bd15fea770a98bfc86e10bd1b569febf2c3dde2"
       url: "git@github.com:niypoo/diabetes_helpers.git"
     source: git
     version: "1.0.0+1"
@@ -229,7 +229,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: fcff245dac43f933c1e43131132ff984bdb13384
+      resolved-ref: "14f77504553756e1cfb7c2334308e59104a7f414"
       url: "git@github.com:niypoo/diabetes_models.git"
     source: git
     version: "1.0.0+1"
@@ -579,7 +579,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: e319379cc3628e8fd27205c3dad11b31b063f562
+      resolved-ref: c3aa40139dfbdf505a6c34f6d0a524ac9e9c8024
       url: "https://github.com/niypoo/fly_ui.git"
     source: git
     version: "1.0.0+1"
@@ -587,10 +587,10 @@ packages:
     dependency: "direct main"
     description:
       name: get
-      sha256: "2ba20a47c8f1f233bed775ba2dd0d3ac97b4cf32fc17731b3dfc672b06b0e92a"
+      sha256: e4e7335ede17452b391ed3b2ede016545706c01a02292a6c97619705e7d2a85e
       url: "https://pub.dev"
     source: hosted
-    version: "4.6.5"
+    version: "4.6.6"
   get_storage:
     dependency: transitive
     description:
@@ -636,10 +636,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker_android
-      sha256: d32a997bcc4ee135aebca8e272b7c517927aa65a74b9c60a81a2764ef1a0462d
+      sha256: "47da2161c2e9f8f8a9cbbd89d466d174333fbdd769aeed848912e0b16d9cb369"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.7+5"
+    version: "0.8.8"
   image_picker_for_web:
     dependency: transitive
     description:
@@ -743,7 +743,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: bfc8086cde5bb2e60eaf261497060dada8396f69
+      resolved-ref: "40d3f357947ebce684e3fdca4b0c9d35c417a9ff"
       url: "https://github.com/niypoo/loading_service.git"
     source: git
     version: "1.0.0+1"
@@ -889,18 +889,18 @@ packages:
     dependency: transitive
     description:
       name: permission_handler
-      sha256: "63e5216aae014a72fe9579ccd027323395ce7a98271d9defa9d57320d001af81"
+      sha256: bc56bfe9d3f44c3c612d8d393bd9b174eb796d706759f9b495ac254e4294baa5
       url: "https://pub.dev"
     source: hosted
-    version: "10.4.3"
+    version: "10.4.5"
   permission_handler_android:
     dependency: transitive
     description:
       name: permission_handler_android
-      sha256: d74e77a5ecd38649905db0a7d05ef16bed42ff263b9efb73ed794317c5764ec3
+      sha256: "59c6322171c29df93a22d150ad95f3aa19ed86542eaec409ab2691b8f35f9a47"
       url: "https://pub.dev"
     source: hosted
-    version: "10.3.4"
+    version: "10.3.6"
   permission_handler_apple:
     dependency: transitive
     description:
@@ -913,10 +913,10 @@ packages:
     dependency: transitive
     description:
       name: permission_handler_platform_interface
-      sha256: "7c6b1500385dd1d2ca61bb89e2488ca178e274a69144d26bbd65e33eae7c02a9"
+      sha256: f2343e9fa9c22ae4fd92d4732755bfe452214e7189afcc097380950cf567b4b2
       url: "https://pub.dev"
     source: hosted
-    version: "3.11.3"
+    version: "3.11.5"
   permission_handler_windows:
     dependency: transitive
     description:
@@ -1043,7 +1043,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "17c16de4060a5a5bf873097e99444e386c61142c"
+      resolved-ref: "71939112e27ffb9ece73d04d5f20d4ead5e027a1"
       url: "https://github.com/niypoo/snackbar_helper.git"
     source: git
     version: "1.0.0+1"
@@ -1099,34 +1099,34 @@ packages:
     dependency: transitive
     description:
       name: syncfusion_flutter_barcodes
-      sha256: "4f936c970c8f90bfadbc740198ee0a79444fbd3819b8eeec68884108bd5f8e40"
+      sha256: d3ddeca6d3b14c726b19debd23214f1ee8f5883f5cb9156c5ed3b4a31df17858
       url: "https://pub.dev"
     source: hosted
-    version: "22.2.11"
+    version: "22.2.12"
   syncfusion_flutter_charts:
     dependency: transitive
     description:
       name: syncfusion_flutter_charts
-      sha256: f5201fea1541cd1cf9a5d6883f74ddc0434e73bbc77ab285e3313b497411afec
+      sha256: "9b3087a6b2e06a23ae322123a4cd6a9f06256958eee1aeceda47d043bb2dd794"
       url: "https://pub.dev"
     source: hosted
-    version: "22.2.11"
+    version: "22.2.12"
   syncfusion_flutter_core:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
-      sha256: "2baf60cd245a21a7069f036bbca1ca222633d38f57748e133da97a305712627c"
+      sha256: "9f0a4593f7642b2f106e329734d0e5fc746baf8d0a59495eec586cd0d9ba7d02"
       url: "https://pub.dev"
     source: hosted
-    version: "22.2.11"
+    version: "22.2.12"
   syncfusion_flutter_datepicker:
     dependency: transitive
     description:
       name: syncfusion_flutter_datepicker
-      sha256: c8f5b1f08bd4a0e7be409337540b26a5ab702a72fa03532433f8169a19e8c85b
+      sha256: c09d8a84f07da41c12b02ac350f4aab8b73be2c51095fca9f9404b2a5af67585
       url: "https://pub.dev"
     source: hosted
-    version: "22.2.11"
+    version: "22.2.12"
   synchronized:
     dependency: transitive
     description:

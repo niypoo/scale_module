@@ -21,11 +21,9 @@ class LandscapeLayout extends GetView<FoodScaleController> {
       childA: Column(
         children: [
           FlyScaffoldPadding(
-            enablePadding: false,
             child: FlyAppBar(
               backgroundColor: Get.theme.cardColor,
               title: controller.food?.name ?? ' ',
-              enablePadding: false,
               padding: 0.0,
             ),
           ),
