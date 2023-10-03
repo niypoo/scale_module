@@ -15,56 +15,44 @@ class FoodScaleController extends GetxController {
   // define
   static FoodScaleController get to => Get.find();
 
-  // properties
-  // final RulerPickerController rulerController = RulerPickerController();
-
   // Services
   final FoodsFactsHelper _foodsFactsService = FoodsFactsHelper();
 
   // static properties
-  final Food? food = Get.arguments;
+  final Food initFood = Get.arguments;
 
-  final List<ScaleUnit> weightUnits = ScaleUnit.values;
-  final double itemExtent = 35.5;
+  // // the food that will apply changes on it
+  final Rx<Food?> food = Rx<Food?>(null);
+
+  // Units
+  final List<ScaleUnit> units = ScaleUnit.values;
 
   // Unit for Scale , Gram,...
-  final Rx<ScaleUnit> weightUnit = Rx<ScaleUnit>(ScaleUnit.Gram);
+  final Rx<ScaleUnit> selectedUnit = Rx<ScaleUnit>(ScaleUnit.Gram);
 
   // full Weight number , 1.3,1.4,1.5 ....
   final RxDouble weightNumber = RxDouble(0.0);
 
-  // the food that will apply changes on it
-  final Rx<Food?> changedFood = Rx<Food?>(null);
-
+  // manual field controller
   final TextEditingController valueManualController = TextEditingController();
 
   @override
   void onInit() {
-    if (food == null) {
-      return Get.back();
-    } else {
-      // assignment food into new object of food
-      // to handle scale on it
-      changedFood.value = food;
+    // assignment food into new object of food
+    food.value = Food.fromData(initFood.toData());
+    selectedUnit.value = initFood.scale.unit;
+    weightNumber.value = initFood.scale.weight.toDouble();
 
-      weightUnit.value = food!.scale.unit;
-
-      // assign full weight
-      changeRuleNumber(food!.scale.weight.toDouble());
-
-      // ThemeController.to.setSystemUI(
-      //   systemNavigationBarColor: Get.theme.cardColor,
-      //   statusBarColor: Get.theme.cardColor,
-      // );
-    }
     super.onInit();
+
+    weightNumber.listen((_) {
+      // re-calculating
+      changeFoodFactsPerUserChanges();
+    });
   }
 
   @override
   void onClose() {
-    // reset system Ui
-    // ThemeController.to.setSystemUI();
-    // rulerController.dispose();
     valueManualController.dispose();
     super.onClose();
   }
@@ -72,70 +60,49 @@ class FoodScaleController extends GetxController {
   // When user change ruler
   void onValueChange(num? newValue) {
     weightNumber.value = newValue as double;
-    // applied values on changedFood
-    changeFoodFactsPerUserChanges();
+  }
+
+  void onCalculatorChange(double value) {
+    weightNumber.value = value;
   }
 
   // Change changedFood Object
   // applied changes on food object every time user change values
   void changeFoodFactsPerUserChanges() {
-    changedFood.value = _foodsFactsService.changeFactsPerWeight(
-      unit: weightUnit.value,
+    food.value = _foodsFactsService.changeFactsPerWeight(
+      unit: selectedUnit.value,
       weight: weightNumber.value,
-      food: food!,
+      food: initFood,
     );
   }
 
   // reset Only Weight value
   void resetWeightValues() {
     weightNumber.value = 0.0;
-    // rulerController.value = 0.0;
-  }
-
-  void incrementTap() {
-    changeRuleNumber(weightNumber.value + 0.1);
-    // applied values on changedFood
-    changeFoodFactsPerUserChanges();
-  }
-
-  void decrementTap() {
-    changeRuleNumber(weightNumber.value - 0.1);
-    // applied values on changedFood
-    changeFoodFactsPerUserChanges();
-  }
-
-  changeRuleNumber(double number) {
-    double floatNumber = double.parse(number.toStringAsFixed(1));
-    // assign new unit
-    // rulerController.value = floatNumber;
-    weightNumber.value = floatNumber;
   }
 
   // when user change Unit
-  onChangeWeightUnit() async {
+  onChangeUnit() async {
     // show bottom sheet to make user choose one
-    final ScaleUnit? unit = await ActionSheetHelper.show(
+    final ScaleUnit? payload = await ActionSheetHelper.show(
       title: 'Scale units'.tr,
       options: ScaleUnit.values
           .map((e) => ActionSheetOption(title: describeEnum(e).tr, value: e))
           .toList(),
-      height: 0.6,
+      height: Get.height * 0.6,
     ) as ScaleUnit?;
 
-    if (unit == null) return;
+    if (payload == null) return;
 
     // assign new unit
-    weightUnit.value = unit;
+    selectedUnit.value = payload;
 
     // reset
     resetWeightValues();
-
-    // applied values on changedFood
-    changeFoodFactsPerUserChanges();
   }
 
   // when user tap on confirm
-  void confirm() {
+  void save() {
     // alert user to skip this
     if (weightNumber.value <= 0) {
       // close scale
@@ -149,25 +116,19 @@ class FoodScaleController extends GetxController {
     }
 
     // else return with food object to save
-    Get.back(result: changedFood.value);
+    Get.back(result: food.value);
   }
 
-  void cancel() => Get.back();
-
-  // CHange Value By Soft Keyboard
-  // Chang value by manul
-
-  // change valueby manul by softkeypoard
-  Future<void> showValueManuelSheet() async {
+  // Change Scale by Soft Keyboard
+  Future<void> onOpenSoftKeyboard() async {
     //  set current value
     valueManualController.text = weightNumber.value.toString();
 
     // Show bottom
     await CustomBottomSheetHelper.show(
-      title: food!.name,
       child: ChangeValueManual(
         controller: valueManualController,
-        label: describeEnum(weightUnit).tr,
+        label: describeEnum(selectedUnit).tr,
         onConfirm: () => changeValueManual(),
         onReset: () => resetValueManual(),
       ),
@@ -179,14 +140,13 @@ class FoodScaleController extends GetxController {
     final String value = valueManualController.text;
 
     // Skip
-    if (value.isEmpty) return cancel();
+    if (value.isEmpty) return Get.back();
 
     // convert to num
-    final num valueAsNum = num.parse(valueManualController.text);
+    weightNumber.value = double.parse(valueManualController.text);
 
-    // rulerController.value = valueAsNum;
-
-    cancel();
+    // close sheet
+    Get.back();
   }
 
   void resetValueManual() => valueManualController.clear();

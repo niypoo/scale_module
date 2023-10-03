@@ -14,6 +14,9 @@ class FoodsFactsHelper {
     required double weight,
     required Food food,
   }) {
+
+    final Food clone = food.clone();
+
     // how many unit equals in grams
     // like 3.5 tablespoon = 49 grams
     final double weightPreGrams =
@@ -23,36 +26,36 @@ class FoodsFactsHelper {
     // like in flour 38 carbs in 100 grams
     // so 3.5 tablespoon = 49 grams
     // so 49 / 100 grams  =  0.49 ratio
-    final double ratio = (weightPreGrams / food.toGrams);
+    final double ratio = (weightPreGrams / clone.toGrams);
 
     // get carbs per ratio
     // 0.49 ratio * 38 carbs in 100 grams
     // will give us 18.62
 
     // reCalculating calories with new ratio
-    food.calories = (food.calories == null || food.calories!.isNaN)
+    clone.calories = (food.calories == null || food.calories!.isNaN)
         ? 0.0
         : double.parse((food.calories! * ratio).toStringAsFixed(1));
 
     // reCalculating carbs with new ratio
-    food.carbs = (food.carbs.isNaN)
+    clone.carbs = (food.carbs.isNaN)
         ? 0.0
         : double.parse((food.carbs * ratio).toStringAsFixed(1));
 
     // reCalculating fat with new ratio
-    food.fat = (food.fat == null || food.fat!.isNaN)
+    clone.fat = (food.fat == null || food.fat!.isNaN)
         ? 0.0
         : double.parse((food.fat! * ratio).toStringAsFixed(1));
 
     // reCalculating protein with new ratio
-    food.fat = (food.protein == null || food.protein!.isNaN)
+    clone.fat = (food.protein == null || food.protein!.isNaN)
         ? 0.0
         : double.parse((food.protein! * ratio).toStringAsFixed(1));
 
-    food.scale = WeightScale(unit: unit, weight: weight);
-    food.toGrams = weightPreGrams;
+    clone.scale = WeightScale(unit: unit, weight: weight);
+    clone.toGrams = weightPreGrams;
 
-    return food;
+    return clone;
   }
 
   // get total of carbs in my meal

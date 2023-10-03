@@ -6,6 +6,9 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.0.6 <4.0.0'
 
+dependency_overrides:
+  intl: any
+
 dependencies:
   flutter:
     sdk: flutter
@@ -27,11 +30,14 @@ dependencies:
   app_configuration_service:
     git: 
       url: git@github.com:niypoo/app_configuration_service.git
-  # ruler_picker:
-  #   path: ../../../../modules/ruler_picker
+  ruler_picker:
+    path: ../../../../modules/ruler_picker
   bottom_sheet_helper:
     git: 
       url: git@github.com:niypoo/bottom_sheet_helper.git
+  calculator_module:
+    git: 
+      url: git@github.com:niypoo/calculator_module.git
 
 dev_dependencies:
   flutter_test:

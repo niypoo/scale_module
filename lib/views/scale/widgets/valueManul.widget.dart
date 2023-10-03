@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+import 'dart:math' as math;
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/views/widgets/buttons/circalButton.widget.dart';
@@ -5,7 +7,6 @@ import 'package:fly_ui/views/widgets/buttons/elevatedButton.widget.dart';
 import 'package:fly_ui/views/widgets/buttons/textButton.widget.dart';
 import 'package:fly_ui/views/widgets/textField.widget.dart';
 import 'package:get/get.dart';
-import 'package:scale_module/views/scale/widgets/decimalTextInputFormatter.dart';
 import 'package:unicons/unicons.dart';
 
 class ChangeValueManual extends StatelessWidget {
@@ -48,7 +49,7 @@ class ChangeValueManual extends StatelessWidget {
               ),
             ),
           ),
-          FlyElevatedButton(
+          FlyElevatedButton.primary(
             title: 'Confirm'.tr,
             onPressed: onConfirm,
             margin: EdgeInsets.only(bottom: AppConfigService.to.space!.s),
@@ -60,5 +61,47 @@ class ChangeValueManual extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+
+
+class DecimalTextInputFormatter extends TextInputFormatter {
+  DecimalTextInputFormatter({this.decimalRange})
+      : assert(decimalRange == null || decimalRange > 0);
+
+  final int? decimalRange;
+
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue, // unused.
+    TextEditingValue newValue,
+  ) {
+    TextSelection newSelection = newValue.selection;
+    String truncated = newValue.text;
+
+    if (decimalRange != null) {
+      String value = newValue.text;
+
+      if (value.contains(".") &&
+          value.substring(value.indexOf(".") + 1).length > decimalRange!) {
+        truncated = oldValue.text;
+        newSelection = oldValue.selection;
+      } else if (value == ".") {
+        truncated = "0.";
+
+        newSelection = newValue.selection.copyWith(
+          baseOffset: math.min(truncated.length, truncated.length + 1),
+          extentOffset: math.min(truncated.length, truncated.length + 1),
+        );
+      }
+
+      return TextEditingValue(
+        text: truncated,
+        selection: newSelection,
+        composing: TextRange.empty,
+      );
+    }
+    return newValue;
   }
 }
