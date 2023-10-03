@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:ruler_picker/rulerPicker.dart';
 import 'package:scale_module/helpers/foodFacts.helper.dart';
-import 'package:scale_module/views/scale/widgets/valueManul.widget.dart';
+import 'package:scale_module/views/widgets/valueManul.widget.dart';
 
 class FoodScaleController extends GetxController {
   // define

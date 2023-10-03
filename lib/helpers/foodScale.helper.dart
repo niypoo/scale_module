@@ -1,8 +1,8 @@
 import 'package:diabetes_enums/weightUnit.enum.dart';
 import 'package:diabetes_models/food.model.dart';
 import 'package:get/get.dart';
-import 'package:scale_module/views/scale/foodScale.binding.dart';
-import 'package:scale_module/views/scale/foodScale.view.dart';
+import 'package:scale_module/views/foodScale.binding.dart';
+import 'package:scale_module/views/foodScale.view.dart';
 
 class FoodScaleHelper {
   // open Weight Piker to ask user about weight and
