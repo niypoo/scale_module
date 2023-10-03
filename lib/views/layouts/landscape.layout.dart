@@ -20,7 +20,7 @@ class LandscapeLayout extends StatelessWidget {
       ),
       child: const FlyLandscapeView(
         childB: Column(children: [
-          Flexible(child: CalculatorInformationScreen()),
+          Expanded(child: CalculatorInformationScreen()),
           CalculatorToolsButtons(),
         ]),
         childA: Column(
