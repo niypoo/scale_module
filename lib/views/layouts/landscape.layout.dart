@@ -19,11 +19,11 @@ class LandscapeLayout extends StatelessWidget {
         title: 'Food Scale'.tr,
       ),
       child: const FlyLandscapeView(
-        childA: Column(children: [
+        childB: Column(children: [
           Flexible(child: CalculatorInformationScreen()),
           CalculatorToolsButtons(),
         ]),
-        childB: Column(
+        childA: Column(
           children: [
             Expanded(child: CalculatorNumbersPad()),
             SizedBox(height: 15),
