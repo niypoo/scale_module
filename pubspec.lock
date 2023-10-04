@@ -104,7 +104,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "36111484cdb95da50ca79e9fcda0248fa3aea710"
+      resolved-ref: "0d2dcc0be8ed567ca3a4d48457c9713d4ddb0387"
       url: "git@github.com:niypoo/calculator_module.git"
     source: git
     version: "1.0.0+1"

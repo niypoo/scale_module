@@ -16,7 +16,7 @@ class CalculatorInformationScreen extends GetView<FoodScaleController> {
   Widget build(BuildContext context) {
     return FlyContainer(
       child: SizedBox(
-        height: Get.height * 0.15,
+        height: Get.height * 0.25,
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
