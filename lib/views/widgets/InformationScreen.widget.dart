@@ -22,8 +22,8 @@ class InformationScreen extends GetView<FoodScaleController> {
 
         // TITLE
         title: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('From'.tr),
             AutoSizeText(
