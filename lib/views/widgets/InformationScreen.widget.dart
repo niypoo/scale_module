@@ -14,7 +14,6 @@ class InformationScreen extends GetView<FoodScaleController> {
   Widget build(BuildContext context) {
     return Obx(
       () => CalculatorInformationScreenWidget(
-
         // NUMBERS
         number: controller.weightNumber.value.toString(),
 
@@ -22,13 +21,17 @@ class InformationScreen extends GetView<FoodScaleController> {
         label: describeEnum(controller.selectedUnit.value).tr,
 
         // TITLE
-        title: AutoSizeText.rich(
-          TextSpan(
-            text: controller.food.value!.name,
-            children: [
-              const TextSpan(
-                text: ' ',
-              ),
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('From'.tr),
+            AutoSizeText(
+              controller.food.value!.name,
+              style: Get.theme.textTheme.bodyLarge!.copyWith(height: 1.2),
+              maxLines: 1,
+            ),
+            AutoSizeText.rich(
               TextSpan(
                 text: 'Contains on'.tr,
                 children: [
@@ -42,10 +45,8 @@ class InformationScreen extends GetView<FoodScaleController> {
                 ],
                 style: Get.theme.textTheme.bodySmall,
               ),
-            ],
-          ),
-          style: Get.theme.textTheme.titleLarge,
-          maxLines: 2,
+            ),
+          ],
         ),
       ),
     );
