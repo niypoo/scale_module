@@ -2,6 +2,7 @@ import 'package:bottom_sheet_helper/models/actionSheetOption.model.dart';
 import 'package:bottom_sheet_helper/services/actionSheet.helper.dart';
 import 'package:bottom_sheet_helper/services/customBottomSheet.helper.dart';
 import 'package:bottom_sheet_helper/services/messageBottomSheet.helper.dart';
+import 'package:calculator_module/widgets/calculatorManualValueField.widget.dart';
 import 'package:diabetes_enums/weightUnit.enum.dart';
 import 'package:diabetes_models/food.model.dart';
 import 'package:flutter/foundation.dart';
@@ -9,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:ruler_picker/rulerPicker.dart';
 import 'package:scale_module/helpers/foodFacts.helper.dart';
-import 'package:scale_module/views/widgets/valueManul.widget.dart';
 
 class FoodScaleController extends GetxController {
   // define
@@ -126,7 +126,7 @@ class FoodScaleController extends GetxController {
 
     // Show bottom
     await CustomBottomSheetHelper.show(
-      child: ChangeValueManual(
+      child: CalculatorManualValueFieldWidget(
         controller: valueManualController,
         label: describeEnum(selectedUnit).tr,
         onConfirm: () => changeValueManual(),

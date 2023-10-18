@@ -21,10 +21,10 @@ class PortraitLayout extends StatelessWidget {
       child: const FlyScaffoldPadding(
         child: Column(
           children: [
-            CalculatorInformationScreen(),
+            InformationScreen(),
             CalculatorToolsButtons(),
             Expanded(
-              child: CalculatorNumbersPad(),
+              child: NumbersPad(),
             ),
             SizedBox(height: 15),
           ],

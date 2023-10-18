@@ -1,10 +1,10 @@
-import 'package:calculator_module/board/calculatorNumberBoard.widget.dart';
+import 'package:calculator_module/widgets/calculatorNumberBoard.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scale_module/views/foodScale.controller.dart';
 
-class CalculatorNumbersPad extends GetView<FoodScaleController> {
-  const CalculatorNumbersPad({
+class NumbersPad extends GetView<FoodScaleController> {
+  const NumbersPad({
     super.key,
 
   });
