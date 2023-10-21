@@ -48,11 +48,12 @@ class FoodsFactsHelper {
         : double.parse((food.fat! * ratio).toStringAsFixed(1));
 
     // reCalculating protein with new ratio
-    clone.fat = (food.protein == null || food.protein!.isNaN)
+    clone.protein = (food.protein == null || food.protein!.isNaN)
         ? 0.0
         : double.parse((food.protein! * ratio).toStringAsFixed(1));
 
     clone.scale = WeightScale(unit: unit, weight: weight);
+    
     clone.toGrams = weightPreGrams;
 
     return clone;
