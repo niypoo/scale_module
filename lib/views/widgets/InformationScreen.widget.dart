@@ -24,7 +24,7 @@ class InformationScreen extends GetView<FoodScaleController> {
         title: controller.food.value == null ||
                 controller.food.value!.name == '' ||
                 controller.food.value!.carbs == 0.0
-            ? const SizedBox.expand()
+            ? const SizedBox.shrink()
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
