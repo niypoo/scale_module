@@ -21,7 +21,8 @@ class InformationScreen extends GetView<FoodScaleController> {
         label: describeEnum(controller.selectedUnit.value).tr,
 
         // TITLE
-        title: Column(
+        title:
+         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
