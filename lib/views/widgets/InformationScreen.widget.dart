@@ -28,7 +28,7 @@ class InformationScreen extends GetView<FoodScaleController> {
             Text('From'.tr),
             AutoSizeText(
               controller.food.value!.name,
-              style: Get.theme.textTheme.bodyLarge!.copyWith(height: 1.2),
+              style: Get.theme.textTheme.titleLarge!.copyWith(height: 1.5),
               maxLines: 1,
             ),
             AutoSizeText.rich(
@@ -37,8 +37,13 @@ class InformationScreen extends GetView<FoodScaleController> {
                 children: [
                   const TextSpan(text: ' '),
                   TextSpan(
-                    text:
-                        '${controller.food.value!.carbs.toStringAsFixed(1)} ${'Carbs'.tr}',
+                    text: controller.food.value!.carbs.toStringAsFixed(1),
+                    style: Get.theme.textTheme.bodyLarge!
+                        .copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  const TextSpan(text: ' '),
+                  TextSpan(
+                    text: 'Carbs'.tr,
                     style: Get.theme.textTheme.bodySmall!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
