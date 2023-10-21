@@ -21,38 +21,41 @@ class InformationScreen extends GetView<FoodScaleController> {
         label: describeEnum(controller.selectedUnit.value).tr,
 
         // TITLE
-        title:
-         Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('From'.tr),
-            AutoSizeText(
-              controller.food.value!.name,
-              style: Get.theme.textTheme.titleLarge!.copyWith(height: 1.5),
-              maxLines: 1,
-            ),
-            AutoSizeText.rich(
-              TextSpan(
-                text: 'Contains on'.tr,
+        title: controller.food.value == null ||
+                controller.food.value!.name == '' ||
+                controller.food.value!.carbs == 0.0
+            ? const SizedBox.expand()
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const TextSpan(text: ' '),
-                  TextSpan(
-                    text: controller.food.value!.carbs.toStringAsFixed(1),
-                    style: Get.theme.textTheme.bodyLarge!
-                        .copyWith(fontWeight: FontWeight.bold),
+                  Text('From'.tr),
+                  AutoSizeText(
+                    controller.food.value!.name,
+                    style:
+                        Get.theme.textTheme.titleLarge!.copyWith(height: 1.5),
+                    maxLines: 1,
                   ),
-                  const TextSpan(text: ' '),
-                  TextSpan(
-                    text: 'Carbs'.tr,
-                    style: Get.theme.textTheme.bodySmall
+                  AutoSizeText.rich(
+                    TextSpan(
+                      text: 'Contains on'.tr,
+                      children: [
+                        const TextSpan(text: ' '),
+                        TextSpan(
+                          text: controller.food.value!.carbs.toStringAsFixed(1),
+                          style: Get.theme.textTheme.bodyLarge!
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const TextSpan(text: ' '),
+                        TextSpan(
+                            text: 'Carbs'.tr,
+                            style: Get.theme.textTheme.bodySmall),
+                      ],
+                      style: Get.theme.textTheme.bodySmall,
+                    ),
                   ),
                 ],
-                style: Get.theme.textTheme.bodySmall,
               ),
-            ),
-          ],
-        ),
       ),
     );
   }
