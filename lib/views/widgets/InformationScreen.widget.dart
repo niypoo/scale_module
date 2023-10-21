@@ -44,8 +44,7 @@ class InformationScreen extends GetView<FoodScaleController> {
                   const TextSpan(text: ' '),
                   TextSpan(
                     text: 'Carbs'.tr,
-                    style: Get.theme.textTheme.bodySmall!
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: Get.theme.textTheme.bodySmall
                   ),
                 ],
                 style: Get.theme.textTheme.bodySmall,
