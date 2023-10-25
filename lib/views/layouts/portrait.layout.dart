@@ -14,22 +14,20 @@ class PortraitLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyScaffoldPadding(
-      child: FlyScaffold(
-        appBar: FlyAppBar(
-          title: 'Food Scale'.tr,
-        ),
-        child: const FlyScaffoldPadding(
-          child: Column(
-            children: [
-              InformationScreen(),
-              CalculatorToolsButtons(),
-              Expanded(
-                child: NumbersPad(),
-              ),
-              SizedBox(height: 15),
-            ],
-          ),
+    return FlyScaffold(
+      appBar: FlyAppBar(
+        title: 'Food Scale'.tr,
+      ),
+      child: const FlyScaffoldPadding(
+        child: Column(
+          children: [
+            InformationScreen(),
+            CalculatorToolsButtons(),
+            Expanded(
+              child: NumbersPad(),
+            ),
+            SizedBox(height: 15),
+          ],
         ),
       ),
     );

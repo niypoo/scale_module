@@ -15,16 +15,18 @@ class LandscapeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlyScaffoldPadding(
-      child: FlyScaffold(
-        appBar: FlyAppBar(
-          title: 'Food Scale'.tr,
-        ),
-        child: const FlyLandscapeView(
-          childB: Column(children: [
-            Expanded(child: InformationScreen()),
-            CalculatorToolsButtons(),
-          ]),
+    return FlyScaffold(
+      appBar: FlyAppBar(
+        title: 'Food Scale'.tr,
+      ),
+      child: const FlyScaffoldPadding(
+        child: FlyLandscapeView(
+          childB: Column(
+            children: [
+              Expanded(child: InformationScreen()),
+              CalculatorToolsButtons(),
+            ],
+          ),
           childA: Column(
             children: [
               Expanded(child: NumbersPad()),
