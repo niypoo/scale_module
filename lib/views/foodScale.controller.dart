@@ -126,6 +126,8 @@ class FoodScaleController extends GetxController {
 
     // Show bottom
     await CustomBottomSheetHelper.show(
+      title: 'Keyboard'.tr,
+      subTitle: 'Change value by keyboard.'.tr,
       child: CalculatorManualValueFieldWidget(
         controller: valueManualController,
         label: describeEnum(selectedUnit).tr,
