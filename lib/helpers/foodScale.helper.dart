@@ -8,7 +8,7 @@ class FoodScaleHelper {
   // open Weight Piker to ask user about weight and
   // handle carbs and other
   static Future<Food?> scale(Food food) async => await Get.to(
-        const FoodScaleView(),
+        () => const FoodScaleView(),
         binding: FoodScaleBinding(),
         arguments: food,
       ) as Food?;
