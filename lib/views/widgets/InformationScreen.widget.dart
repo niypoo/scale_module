@@ -1,5 +1,4 @@
 import 'package:calculator_module/widgets/calculatorInformationScreen.widget.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:get/get.dart';
@@ -19,7 +18,7 @@ class InformationScreen extends GetView<FoodScaleController> {
         number: controller.weightNumber.value.toString(),
 
         // LABELs
-        label: describeEnum(controller.selectedUnit.value).tr,
+        label: controller.selectedUnit.value.name.tr,
 
         // TITLE
         title: controller.food.value == null ||
@@ -30,7 +29,7 @@ class InformationScreen extends GetView<FoodScaleController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('From'.tr),
+                  // Text('From'.tr),
                   AutoSizeText(
                     controller.food.value!.name,
                     style: Get.theme.textTheme.titleLarge!.copyWith(
