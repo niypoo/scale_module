@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:fly_ui/extensions/responsive.extension.dart';
 import 'package:fly_ui/views/widgets/inkWell.widget.dart';
 import 'package:get/get.dart';
 import 'package:scale_module/views/foodScale.controller.dart';
@@ -9,7 +9,6 @@ class CalculatorToolsButtons extends GetView<FoodScaleController> {
   const CalculatorToolsButtons({
     super.key,
   });
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +21,20 @@ class CalculatorToolsButtons extends GetView<FoodScaleController> {
         child: Wrap(
           spacing: 8,
           children: [
-          
             FlyInkWell(
               onTap: controller.onChangeUnit,
               child: Chip(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 5, horizontal: 15),
+                padding: EdgeInsets.all(5.sp),
                 backgroundColor: Get.theme.cardColor,
                 avatar: Icon(UniconsLine.angle_down,
                     color: Get.theme.iconTheme.color),
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(width: 0, color: Colors.transparent),
+                  borderRadius: BorderRadius.circular(15.sp),
+                ),
                 label: Obx(
                   () => Text(
-                    describeEnum(controller.selectedUnit.value).tr,
+                    controller.selectedUnit.value.name.tr,
                     style: Get.theme.textTheme.titleSmall,
                   ),
                 ),
@@ -42,14 +43,19 @@ class CalculatorToolsButtons extends GetView<FoodScaleController> {
             FlyInkWell(
               onTap: controller.onOpenSoftKeyboard,
               child: Chip(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 5, horizontal: 15),
+                padding: EdgeInsets.all(5.sp),
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(width: 0, color: Colors.transparent),
+                  borderRadius: BorderRadius.circular(15.sp),
+                ),
                 backgroundColor: Get.theme.cardColor,
-                label: Text('Keyboard'.tr,      style: Get.theme.textTheme.titleSmall,),
+                label: Text(
+                  'Keyboard'.tr,
+                  style: Get.theme.textTheme.titleSmall,
+                ),
                 avatar: const Icon(UniconsLine.keyboard),
               ),
             ),
-      
           ],
         ),
       ),

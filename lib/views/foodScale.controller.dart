@@ -5,7 +5,6 @@ import 'package:bottom_sheet_helper/services/messageBottomSheet.helper.dart';
 import 'package:calculator_module/widgets/calculatorManualValueField.widget.dart';
 import 'package:diabetes_enums/weightUnit.enum.dart';
 import 'package:diabetes_models/food.model.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:ruler_picker/rulerPicker.dart';
@@ -31,7 +30,7 @@ class FoodScaleController extends GetxController {
   final Rx<ScaleUnit> selectedUnit = Rx<ScaleUnit>(ScaleUnit.Gram);
 
   // full Weight number , 1.3,1.4,1.5 ....
-  final RxDouble weightNumber = RxDouble(0.0);
+  final RxNum weightNumber = RxNum(0.0);
 
   // manual field controller
   final TextEditingController valueManualController = TextEditingController();
@@ -62,7 +61,7 @@ class FoodScaleController extends GetxController {
     weightNumber.value = newValue as double;
   }
 
-  void onCalculatorChange(double value) {
+  void onCalculatorChange(num value) {
     weightNumber.value = value;
   }
 
@@ -71,7 +70,7 @@ class FoodScaleController extends GetxController {
   void changeFoodFactsPerUserChanges() {
     food.value = _foodsFactsService.changeFactsPerWeight(
       unit: selectedUnit.value,
-      weight: weightNumber.value,
+      weight: weightNumber.value.toDouble(),
       food: initFood,
     );
   }
@@ -87,7 +86,7 @@ class FoodScaleController extends GetxController {
     final ScaleUnit? payload = await ActionSheetHelper.show(
       title: 'Scale units'.tr,
       options: ScaleUnit.values
-          .map((e) => ActionSheetOption(title: describeEnum(e).tr, value: e))
+          .map((e) => ActionSheetOption(title: e.name.tr, value: e))
           .toList(),
       height: Get.height * 0.6,
     ) as ScaleUnit?;
@@ -130,7 +129,7 @@ class FoodScaleController extends GetxController {
       subTitle: 'Change value by keyboard.'.tr,
       child: CalculatorManualValueFieldWidget(
         controller: valueManualController,
-        label: describeEnum(selectedUnit).tr,
+        label: selectedUnit.value.name.tr,
         onConfirm: () => changeValueManual(),
         onReset: () => resetValueManual(),
       ),
