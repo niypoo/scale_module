@@ -30,7 +30,7 @@ class FoodScaleController extends GetxController {
   final Rx<ScaleUnit> selectedUnit = Rx<ScaleUnit>(ScaleUnit.Gram);
 
   // full Weight number , 1.3,1.4,1.5 ....
-  final RxNum weightNumber = RxNum(0.0);
+  final RxNum weightNumber = RxNum(0);
 
   // manual field controller
   final TextEditingController valueManualController = TextEditingController();
@@ -62,7 +62,6 @@ class FoodScaleController extends GetxController {
   }
 
   void onCalculatorChange(num value) {
-    print('onCalculatorChange ++ [[[[value $value]]]]');
     weightNumber.value = value;
   }
 
@@ -78,7 +77,7 @@ class FoodScaleController extends GetxController {
 
   // reset Only Weight value
   void resetWeightValues() {
-    weightNumber.value = 0.0;
+    weightNumber.value = 0;
   }
 
   // when user change Unit
