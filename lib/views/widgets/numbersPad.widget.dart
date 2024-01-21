@@ -6,13 +6,13 @@ import 'package:scale_module/views/foodScale.controller.dart';
 class NumbersPad extends GetView<FoodScaleController> {
   const NumbersPad({
     super.key,
-
   });
 
   @override
   Widget build(BuildContext context) {
     return Obx(
       () => CalculatorNumberBoardWidget(
+        key: ValueKey(controller.selectedUnit.value.name),
         initValue: controller.weightNumber.value,
         onChange: controller.onCalculatorChange,
         onSave: controller.save,
