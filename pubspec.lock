@@ -104,7 +104,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "5becbb805fd97918844dd62d408d27eb6bdb0a7e"
+      resolved-ref: be43da44cda270d11f101f4d886de0e01e96acb8
       url: "git@github.com:niypoo/calculator_module.git"
     source: git
     version: "1.0.0+1"
@@ -826,7 +826,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "4ec1281aac3062d114a75a1c9067553488d0124a"
+      resolved-ref: c645af649e0d41a95f4954ce7da295c042365664
       url: "git@github.com:niypoo/number_picker_module.git"
     source: git
     version: "1.0.0+1"

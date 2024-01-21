@@ -40,7 +40,7 @@ class FoodScaleController extends GetxController {
     // assignment food into new object of food
     food.value = Food.fromData(initFood.toData());
     selectedUnit.value = initFood.scale.unit;
-    weightNumber.value = initFood.scale.weight.toDouble();
+    weightNumber.value = initFood.scale.weight.toInt();
 
     super.onInit();
 
@@ -62,6 +62,7 @@ class FoodScaleController extends GetxController {
   }
 
   void onCalculatorChange(num value) {
+    print('onCalculatorChange ++ [[[[value $value]]]]');
     weightNumber.value = value;
   }
 

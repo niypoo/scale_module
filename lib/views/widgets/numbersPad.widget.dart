@@ -16,6 +16,7 @@ class NumbersPad extends GetView<FoodScaleController> {
         initValue: controller.weightNumber.value,
         onChange: controller.onCalculatorChange,
         onSave: controller.save,
+        fractionDigits: 2,
       ),
     );
   }
