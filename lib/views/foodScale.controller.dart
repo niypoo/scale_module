@@ -109,7 +109,7 @@ class FoodScaleController extends GetxController {
       // show message
       MessageBottomSheetHelper.show(
           title: "Empty Scale",
-          subTitle:
+          body:
               'has canceled due to scale is empty, you have to scale 1 gram at least.');
       return;
     }
